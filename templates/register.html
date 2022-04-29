@@ -1,0 +1,57 @@
+<!--<section>-->
+<!--    <h1>회원가입</h1>-->
+<!--    <form action="registerimpl" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        ID<input type="text" name="id"><br>-->
+<!--        PWD<input type="text" name="pwd"><br>-->
+<!--        NAME<input type="text" name="name"><br>-->
+<!--        <input type="submit" value="register">-->
+<!--        <input type="reset" value="reset">-->
+<!--    </form>-->
+
+
+
+
+<html>
+{% load static %}
+    <head>
+        <title>회원가입</title>
+        <link rel="stylesheet" href="{%static 'css/login_.css'%}">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="form-wrap">
+                <div class="button-wrap">
+                    <div id="btn"></div>
+                    <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+                </div>
+
+                <form id="register" action="registerimpl" class="input-group"  method="post">
+                    {% csrf_token %}
+                    <input type="text" class="input-field" placeholder="User name or Email" required name="id">
+                    <input type="password" class="input-field" placeholder="Enter Password" required name="pwd">
+                    <input type="text" class="input-field" placeholder="Your name" required name="name">
+                    <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+                    <button class="submit">REGISTER</button>
+<!--                    <input type="submit" value="register">-->
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+        </script>
